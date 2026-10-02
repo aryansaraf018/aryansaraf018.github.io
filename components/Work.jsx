@@ -5,24 +5,35 @@ import SectionHead from "./SectionHead";
 
 const items = [
   {
-    date: "Jan 2026 → Now",
+    date: "Aug 2026 → Now",
+    logo: "USC",
+    badge: "Current role",
+    title: "Course Producer, CSCI 526 Advanced Game Consoles",
+    org: "University of Southern California · Los Angeles",
+    bullets: [
+      ["Teaching:", "Deliver technical lectures on Unity and game systems to 80+ graduate students."],
+      ["Operations:", "Manage logistics for 17 project teams, milestone schedules, submission pipelines, and grading, keeping project work organized throughout the course."],
+    ],
+    tags: ["Unity", "C#", "System Design", "Teaching"],
+  },
+  {
+    date: "Jan 2026 → May 2026",
     logo: "USC",
     title: "Course Grader, CSCI 526 Advanced Game Consoles",
     org: "University of Southern California · Los Angeles",
-    summary:
-      "Evaluating Unity/C# projects and system designs for 60+ grad students. Weekly office hours, structured rubric-based feedback.",
-    tags: ["Unity", "C#", "System Design"],
+    summary: "Evaluated Unity and C# assignments for 60+ graduate students; gave rubric-based written feedback.",
+    tags: ["Unity", "C#", "Code Review"],
   },
   {
-    date: "May → Aug 2025",
+    date: "May 2025 → Aug 2025",
     logo: "USC",
     title: "Graduate Research Assistant",
     org: "University of Southern California · Los Angeles",
     bullets: [
-      ["CI/CD:", "Shipped GitHub Actions pipelines for a C#/.NET + Unity stack, cut manual deploy time ~40%."],
-      ["DX:", "Built dynamic facility-upgrade flows with SQLite + Python JSON configs; reduced integration time ~40% via clean Unity prefabs."],
+      ["Low-latency:", "Held API latency under 50ms (local) syncing a C#/.NET backend with Unity for an American football simulation game."],
+      ["DX:", "Reduced integration time ~40% with reusable Unity prefabs; built facility-upgrade flows on SQLite and JSON."],
     ],
-    tags: ["GitHub Actions", ".NET", "Python", "SQLite", "Unity"],
+    tags: [".NET", "Unity", "C#", "Python", "SQLite"],
   },
   {
     date: "Oct 2023 → Dec 2024",
@@ -32,13 +43,13 @@ const items = [
     title: "DevOps Engineer",
     org: "Jio Platforms Limited · Mumbai, India",
     summary:
-      "On a platform team supporting enterprise telecom products. I owned CI/CD, cloud infra, and DB ops across multiple environments. Most impactful work:",
+      "Platform team supporting enterprise telecom products. Owned CI/CD, cloud infra, and DB ops across the full environment ladder.",
     bullets: [
-      ["Real-time CDC:", "Architected a change-data-capture pipeline from NoSQL stores to Elasticsearch, unlocking live analytics for enterprise customers."],
-      ["IaC:", "Rewrote GCP provisioning in Terraform, ~80% faster deploys, consistent envs across Dev/QA/Pre-Prod/Prod."],
-      ["Zero-downtime:", "Rolled out Azure DevOps pipelines + Artifact Registry with rolling K8s updates, 30% lower platform latency."],
-      ["FinOps:", "Audited & decomm'd idle infra, saved $7K+/month. Swept 100+ prod hosts for vulnerabilities."],
-      ["Data:", "Ran MySQL, Postgres, Cassandra, ScyllaDB, Mongo, Redis, Elasticsearch clusters at HA."],
+      ["Real-time CDC:", "Architected a change-data-capture pipeline streaming NoSQL datastore changes into Elasticsearch to power live analytics for enterprise clients."],
+      ["IaC:", "Reduced deployment time ~80% by automating GCP provisioning with Terraform across 4 standardized environments."],
+      ["Zero-downtime:", "Cut platform latency 30% with Azure DevOps CI/CD pipelines and zero-downtime Kubernetes rollouts."],
+      ["FinOps:", "Saved $7,000+ monthly by decommissioning idle infra; ran vulnerability and malware scans on 100+ servers."],
+      ["Data:", "Operated and tuned 7 database engines for HA across dev/QA/UAT/pre-prod/prod, including Cassandra, ScyllaDB, MongoDB, Redis."],
     ],
     tags: ["GCP", "Terraform", "Kubernetes", "Kafka", "Azure DevOps", "Elasticsearch", "Cassandra", "ScyllaDB"],
   },

@@ -6,31 +6,26 @@ import SectionHead from "./SectionHead";
 function ArchSvgLB() {
   return (
     <svg viewBox="0 0 300 320" className="arch-svg w-full h-auto">
-      {/* Spine */}
       <rect x="20" y="20" width="60" height="28" rx="4" className="arch-box spine" />
       <rect x="120" y="20" width="60" height="28" rx="4" className="arch-box spine" />
       <rect x="220" y="20" width="60" height="28" rx="4" className="arch-box spine" />
       <text x="50" y="38" className="arch-label">core</text>
       <text x="150" y="38" className="arch-label">core</text>
       <text x="250" y="38" className="arch-label">core</text>
-      {/* Agg */}
       <rect x="30" y="110" width="50" height="24" rx="4" className="arch-box agg" />
       <rect x="130" y="110" width="50" height="24" rx="4" className="arch-box agg" />
       <rect x="230" y="110" width="50" height="24" rx="4" className="arch-box agg" />
       <text x="55" y="126" className="arch-label">agg</text>
       <text x="155" y="126" className="arch-label">agg</text>
       <text x="255" y="126" className="arch-label">agg</text>
-      {/* ToR */}
       <rect x="20" y="180" width="40" height="22" rx="3" className="arch-box tor" />
       <rect x="70" y="180" width="40" height="22" rx="3" className="arch-box tor" />
       <rect x="130" y="180" width="40" height="22" rx="3" className="arch-box tor" />
       <rect x="180" y="180" width="40" height="22" rx="3" className="arch-box tor" />
       <rect x="240" y="180" width="40" height="22" rx="3" className="arch-box tor" />
-      {/* Hosts */}
       {[40, 90, 150, 200, 260].map((x) => (
         <circle key={x} cx={x} cy="260" r="8" className="arch-host" />
       ))}
-      {/* Links */}
       <line x1="50" y1="48" x2="55" y2="110" className="arch-link" />
       <line x1="150" y1="48" x2="155" y2="110" className="arch-link" />
       <line x1="250" y1="48" x2="255" y2="110" className="arch-link" />
@@ -48,7 +43,6 @@ function ArchSvgLB() {
       <line x1="150" y1="202" x2="150" y2="252" className="arch-link" />
       <line x1="200" y1="202" x2="200" y2="252" className="arch-link" />
       <line x1="260" y1="202" x2="260" y2="252" className="arch-link" />
-      {/* Probe */}
       <circle r="3" className="probe">
         <animateMotion
           dur="3s"
@@ -64,89 +58,113 @@ function ArchSvgLB() {
   );
 }
 
-function PipelineAQR() {
+function MicroburstViz() {
   return (
-    <div className="flex flex-col gap-4 mt-2.5">
-      <div className="bg-bg-2 border border-border-bright rounded-[10px] p-3.5 text-center">
-        <div className="text-2xl text-amber mb-1">?</div>
-        <div className="font-mono text-[11px] leading-[1.5] text-fg-1">Query</div>
-      </div>
-      <div className="text-center text-amber text-base leading-none">↓</div>
-      <div className="bg-amber-dim border border-amber rounded-[10px] p-3.5 text-center">
-        <div className="text-2xl text-amber mb-1">▩</div>
-        <div className="font-mono text-[11px] leading-[1.5] text-amber-bright">
-          DistilRoBERTa
-          <br />
-          <span className="text-fg-3 text-[10px]">classifier</span>
-        </div>
-      </div>
-      <div className="flex flex-col gap-3 mt-1">
-        <div>
-          <div className="text-center text-amber text-base">↓</div>
-          <div className="bg-bg-2 border border-border-bright rounded-[10px] py-2.5 px-3 text-center">
-            <div className="font-mono text-[11px] text-fg-1">strong → direct retrieve</div>
-          </div>
-        </div>
-        <div>
-          <div className="text-center text-amber text-base">↓</div>
-          <div className="bg-bg-2 border border-amber-line rounded-[10px] py-2.5 px-3 text-center">
-            <div className="font-mono text-[11px] text-fg-1">
-              weak → <strong className="text-fg-0">Google Trends</strong> injection → rewrite → retrieve
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <svg viewBox="0 0 300 320" className="arch-svg w-full h-auto">
+      {/* Leaf-spine */}
+      <rect x="40" y="30" width="70" height="26" rx="4" className="arch-box spine" />
+      <rect x="190" y="30" width="70" height="26" rx="4" className="arch-box spine" />
+      <text x="75" y="46" className="arch-label">spine</text>
+      <text x="225" y="46" className="arch-label">spine</text>
+
+      <rect x="25" y="120" width="60" height="24" rx="4" className="arch-box agg" />
+      <rect x="120" y="120" width="60" height="24" rx="4" className="arch-box agg" />
+      <rect x="215" y="120" width="60" height="24" rx="4" className="arch-box agg" />
+      <text x="55" y="136" className="arch-label">leaf</text>
+      <text x="150" y="136" className="arch-label">leaf</text>
+      <text x="245" y="136" className="arch-label">leaf</text>
+
+      {/* Links */}
+      <line x1="75" y1="56" x2="55" y2="120" className="arch-link" />
+      <line x1="75" y1="56" x2="150" y2="120" className="arch-link" />
+      <line x1="75" y1="56" x2="245" y2="120" className="arch-link" />
+      <line x1="225" y1="56" x2="55" y2="120" className="arch-link" />
+      <line x1="225" y1="56" x2="150" y2="120" className="arch-link" />
+      <line x1="225" y1="56" x2="245" y2="120" className="arch-link" />
+
+      {/* Queue depth bars */}
+      <text x="10" y="180" className="arch-tier">QUEUE DEPTH (100μs samples)</text>
+      <g>
+        {[
+          [25, 30], [40, 20], [55, 25], [70, 45], [85, 90], [100, 95], [115, 70],
+          [130, 25], [145, 20], [160, 22], [175, 18], [190, 35], [205, 80], [220, 92],
+          [235, 60], [250, 22], [265, 20], [280, 24],
+        ].map(([x, h], i) => (
+          <rect
+            key={i}
+            x={x}
+            y={290 - h}
+            width="10"
+            height={h}
+            rx="1"
+            fill={h > 70 ? "#fbbf24" : "#363640"}
+            opacity={h > 70 ? 1 : 0.6}
+          >
+            <animate
+              attributeName="opacity"
+              values={h > 70 ? "0.6;1;0.6" : "0.4;0.6;0.4"}
+              dur={`${1 + (i % 3) * 0.3}s`}
+              repeatCount="indefinite"
+            />
+          </rect>
+        ))}
+      </g>
+      <line x1="20" y1="220" x2="295" y2="220" stroke="#f59e0b" strokeDasharray="3,3" strokeWidth="1" opacity="0.6" />
+      <text x="20" y="215" className="arch-tier" fill="#f59e0b">ECN threshold</text>
+    </svg>
   );
 }
 
 const cases = [
   {
-    id: "proj-lb",
+    id: "proj-microburst",
     index: "/ 01",
-    stack: ["Go", "Mininet", "OpenFlow", "Python"],
-    title: "Latency-Aware Load Balancer",
-    lede: "A datacenter-grade load balancer that routes based on real-time path latency, not static round-robin.",
+    stack: ["Go", "Python", "Mininet", "Linux tc", "netlink"],
+    github: "https://github.com/aryansaraf018/fabric-telemetry",
+    title: "Fabric Microburst Telemetry",
+    lede: "A microsecond-resolution telemetry agent that catches datacenter congestion bursts byte counters completely miss.",
     sections: [
       {
         h: "Problem",
-        p: "Round-robin load balancers ignore network conditions. Under bursty load on a fat-tree topology, stragglers dominate p95 latency. The control plane has no visibility into actual path cost.",
+        p: "Standard SNMP byte-counter polling at 1-second intervals is blind to the sub-millisecond queue bursts that drive AI collective-traffic tail latency. The visible 17% peak link utilization hides the fact that every burst saturates the link.",
       },
       {
         h: "Approach",
-        p: "Built an SDN/OpenFlow control plane in Go on a 20-node Mininet fat-tree. Active latency probes sample paths every 200ms; a weighted least-latency scheduler steers flows. Straggler mitigation via hedged requests on tail paths.",
+        p: "Built a zero-allocation Go agent that samples switch-queue depth over raw netlink every 100µs, paired with a synchronized incast generator that emulates AI collective traffic on a leaf-spine fabric. Benchmarked polling intervals and ECN marking strategies head-to-head.",
       },
     ],
     results: [
-      <><strong>38% lower</strong> average response time vs. static round-robin under bursty load</>,
-      <><strong>2.1× throughput</strong> improvement at the 95th percentile tail</>,
-      <>Benchmarked 3 strategies: round-robin, least-latency, straggler-mitigation</>,
+      <><strong>100% detection</strong> of 8ms congestion bursts with 1ms queue polling vs. <strong>1%</strong> at 1s</>,
+      <>ECN marking cut median peak queue <strong>29%</strong>, but left median completion unchanged and p99 <strong>15% worse</strong></>,
+      <>Diagnosed a <strong>10.9ms shaper stall</strong> caused by GSO super-packets</>,
     ],
-    diagram: <ArchSvgLB />,
-    diagramTitle: "Architecture",
+    diagram: <MicroburstViz />,
+    diagramTitle: "Queue Depth vs. ECN Threshold",
   },
   {
+    id: "proj-lb",
     index: "/ 02",
-    stack: ["Python", "DistilRoBERTa", "RAG", "Google Trends API"],
-    title: "AQR-RAG, Adaptive Query Reformulation",
-    lede: "A query-rewriting layer that boosts retrieval on ambiguous queries using real-time trend signals.",
+    stack: ["Go", "Mininet", "OpenFlow", "Prequal"],
+    github: "https://github.com/aryansaraf018/CS599-Latency-aware-load-balancing",
+    title: "Latency-Aware Load Balancer",
+    lede: "A Go load balancer that routes by real-time active probing (Prequal) and crushes tail latency under straggler conditions.",
     sections: [
       {
         h: "Problem",
-        p: "RAG systems struggle on short, ambiguous queries: the retriever returns lexically-similar but semantically-off passages. Static rewriters miss time-sensitive phrasing.",
+        p: "Static policies like Least Connections ignore live server state. Under straggler injection on a fat-tree, slow replicas dominate the p99 tail even though the fleet-wide load looks balanced.",
       },
       {
         h: "Approach",
-        p: "Fine-tuned DistilRoBERTa as a binary classifier (weak vs. strong query). Weak queries are rewritten with context injected from Google Trends, trending terms are merged into the expansion via a prompt-template.",
+        p: "Built a Go-based load balancer on a two-level fat-tree (Mininet + OpenFlow) that routes using real-time Prequal-style active probing. The controller adapts probe rate to server heterogeneity so hot replicas get sampled more aggressively than cold ones.",
       },
     ],
     results: [
-      <><strong>82.4%</strong> classification accuracy on held-out queries</>,
-      <><strong>0.90 PR-AUC</strong>, robust precision/recall tradeoff</>,
-      <>Measurable retrieval precision lift on trend-sensitive queries</>,
+      <><strong>3.8× lower</strong> p99 tail latency (570ms → 150ms) vs. Least Connections under straggler injection</>,
+      <>Up to <strong>39% fewer probes</strong> at equal p99 via adaptive probe-rate control</>,
+      <>Isolated network delay as the driver: on a flat topology, all 4 routing policies tied at <strong>~43ms p99</strong></>,
     ],
-    diagram: <PipelineAQR />,
-    diagramTitle: "Pipeline",
+    diagram: <ArchSvgLB />,
+    diagramTitle: "Fat-Tree Topology",
   },
 ];
 
@@ -167,7 +185,22 @@ export default function Projects() {
               className="bg-bg-card border border-border rounded-2xl p-11 hover:border-amber-line transition-colors"
             >
               <div className="flex justify-between items-center mb-7 pb-5 border-b border-border flex-wrap gap-3">
-                <span className="font-mono text-[13px] text-amber font-semibold tracking-wider">{c.index}</span>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <span className="font-mono text-[13px] text-amber font-semibold tracking-wider">{c.index}</span>
+                  {c.github && (
+                    <a
+                      href={c.github}
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-flex items-center gap-1.5 font-mono text-[11px] text-fg-2 hover:text-amber-bright transition-colors border border-border px-2.5 py-1 rounded"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                      </svg>
+                      View source
+                    </a>
+                  )}
+                </div>
                 <div className="flex gap-1.5 flex-wrap">
                   {c.stack.map((s) => (
                     <span key={s} className="font-mono text-[10.5px] px-2.5 py-[3px] bg-amber-dim rounded text-amber-bright">
