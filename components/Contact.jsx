@@ -7,8 +7,8 @@ const tags = ["SWE", "Infrastructure", "Platform Engineering"];
 const cards = [
   {
     label: "Email",
-    value: "aryanrah@usc.edu",
-    href: "mailto:aryanrah@usc.edu",
+    value: "aryansaraf05@gmail.com",
+    href: "mailto:aryansaraf05@gmail.com",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -90,7 +90,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-fg-2 text-[1.1rem] max-w-[640px] mx-auto mb-9"
         >
-          Open to Summer 2026 internships, full-time new-grad roles, and collaboration opportunities.
+          Open to full-time opportunities starting <strong className="text-amber-bright">January 2027</strong>.
         </motion.p>
 
         {/* Role tags */}

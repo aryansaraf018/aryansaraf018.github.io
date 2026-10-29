@@ -5,35 +5,17 @@ import SectionHead from "./SectionHead";
 
 const items = [
   {
-    date: "Aug 2026 → Now",
-    logo: "USC",
-    badge: "Current role",
-    title: "Course Producer, CSCI 526 Advanced Game Consoles",
-    org: "University of Southern California · Los Angeles",
-    bullets: [
-      ["Teaching:", "Deliver technical lectures on Unity and game systems to 80+ graduate students."],
-      ["Operations:", "Manage logistics for 17 project teams, milestone schedules, submission pipelines, and grading, keeping project work organized throughout the course."],
-    ],
-    tags: ["Unity", "C#", "System Design", "Teaching"],
-  },
-  {
-    date: "Jan 2026 → May 2026",
-    logo: "USC",
-    title: "Course Grader, CSCI 526 Advanced Game Consoles",
-    org: "University of Southern California · Los Angeles",
-    summary: "Evaluated Unity and C# assignments for 60+ graduate students; gave rubric-based written feedback.",
-    tags: ["Unity", "C#", "Code Review"],
-  },
-  {
     date: "May 2025 → Aug 2025",
-    logo: "USC",
-    title: "Graduate Research Assistant",
-    org: "University of Southern California · Los Angeles",
+    logo: "E-D",
+    title: "Software Engineering Intern",
+    org: "Easley-Dunn Productions, Inc. · Los Angeles, CA",
     bullets: [
-      ["Low-latency:", "Held API latency under 50ms (local) syncing a C#/.NET backend with Unity for an American football simulation game."],
-      ["DX:", "Reduced integration time ~40% with reusable Unity prefabs; built facility-upgrade flows on SQLite and JSON."],
+      ["Backend:", "Built a C#/.NET backend API integrated with a Unity client to power facility management in a sports simulation application."],
+      ["Low-latency:", "Held API latency under 50ms (local) with real-time synchronization between the backend database and the Unity client."],
+      ["DX:", "Reduced integration time ~40% by delivering reusable Unity prefabs and handler scripts for developer onboarding."],
+      ["Data:", "Designed facility-upgrade flows with data-driven SQLite storage and JSON configurations."],
     ],
-    tags: [".NET", "Unity", "C#", "Python", "SQLite"],
+    tags: ["C#", ".NET", "Unity", "SQLite", "JSON", "Backend APIs"],
   },
   {
     date: "Oct 2023 → Dec 2024",
@@ -45,13 +27,14 @@ const items = [
     summary:
       "Platform team supporting enterprise telecom products. Owned CI/CD, cloud infra, and DB ops across the full environment ladder.",
     bullets: [
-      ["Real-time CDC:", "Architected a change-data-capture pipeline streaming NoSQL datastore changes into Elasticsearch to power live analytics for enterprise clients."],
+      ["Real-time CDC:", "Architected a change-data-capture pipeline streaming NoSQL changes into Elasticsearch for live analytics."],
+      ["API Gateway:", "Improved API response times 30% by configuring Apigee API Gateway with OAuth and token auth for high-traffic APIs."],
       ["IaC:", "Reduced deployment time ~80% by automating GCP provisioning with Terraform across 4 standardized environments."],
       ["Zero-downtime:", "Cut platform latency 30% with Azure DevOps CI/CD pipelines and zero-downtime Kubernetes rollouts."],
       ["FinOps:", "Saved $7,000+ monthly by decommissioning idle infra; ran vulnerability and malware scans on 100+ servers."],
-      ["Data:", "Operated and tuned 7 database engines for HA across dev/QA/UAT/pre-prod/prod, including Cassandra, ScyllaDB, MongoDB, Redis."],
+      ["Data:", "Operated 7 HA database engines (Cassandra, ScyllaDB, MongoDB, Redis) across dev/QA/UAT/pre-prod/prod."],
     ],
-    tags: ["GCP", "Terraform", "Kubernetes", "Kafka", "Azure DevOps", "Elasticsearch", "Cassandra", "ScyllaDB"],
+    tags: ["GCP", "Terraform", "Kubernetes", "Apigee", "Kafka", "Elasticsearch", "Cassandra", "ScyllaDB"],
   },
 ];
 

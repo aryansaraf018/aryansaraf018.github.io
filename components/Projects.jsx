@@ -115,6 +115,89 @@ function MicroburstViz() {
   );
 }
 
+function AQRPipelineViz() {
+  return (
+    <svg viewBox="0 0 300 320" className="arch-svg w-full h-auto">
+      <defs>
+        <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+          <polygon points="0 0, 6 3, 0 6" fill="#f59e0b" opacity="0.7" />
+        </marker>
+        <radialGradient id="classifierGlow">
+          <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      {/* Query node */}
+      <rect x="20" y="20" width="70" height="30" rx="6" className="arch-box agg" />
+      <text x="55" y="39" className="arch-label">query</text>
+
+      {/* Arrow query → classifier */}
+      <line x1="90" y1="35" x2="115" y2="35" stroke="#f59e0b" strokeWidth="1.5" opacity="0.6" markerEnd="url(#arrowhead)" />
+
+      {/* Classifier node (central, pulsing) */}
+      <circle cx="150" cy="35" r="28" fill="url(#classifierGlow)">
+        <animate attributeName="r" values="28;32;28" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <rect x="120" y="18" width="60" height="34" rx="6" className="arch-box spine" />
+      <text x="150" y="33" className="arch-label" style={{ fontSize: "8px" }}>DistilRoBERTa</text>
+      <text x="150" y="45" className="arch-label" style={{ fontSize: "7px", fill: "#8c8a82" }}>classifier</text>
+
+      {/* Branch split arrows */}
+      <path d="M 180 35 Q 210 35 215 85" stroke="#4ade80" strokeWidth="1.5" fill="none" opacity="0.5" strokeDasharray="2,2" />
+      <path d="M 180 35 Q 210 35 215 145" stroke="#f59e0b" strokeWidth="1.5" fill="none" opacity="0.6" />
+
+      {/* Strong branch */}
+      <rect x="210" y="75" width="80" height="24" rx="4" className="arch-box tor" />
+      <text x="250" y="90" className="arch-label" style={{ fontSize: "8px", fill: "#4ade80" }}>strong → retrieve</text>
+
+      {/* Weak branch (longer path) */}
+      <rect x="210" y="135" width="80" height="24" rx="4" className="arch-box spine" />
+      <text x="250" y="150" className="arch-label" style={{ fontSize: "8px" }}>Google Trends</text>
+
+      <line x1="250" y1="159" x2="250" y2="178" stroke="#f59e0b" strokeWidth="1.5" opacity="0.6" markerEnd="url(#arrowhead)" />
+
+      <rect x="210" y="183" width="80" height="24" rx="4" className="arch-box agg" />
+      <text x="250" y="198" className="arch-label" style={{ fontSize: "8px" }}>rewrite</text>
+
+      <line x1="250" y1="207" x2="250" y2="226" stroke="#f59e0b" strokeWidth="1.5" opacity="0.6" markerEnd="url(#arrowhead)" />
+
+      <rect x="210" y="231" width="80" height="24" rx="4" className="arch-box tor" />
+      <text x="250" y="246" className="arch-label" style={{ fontSize: "8px", fill: "#fbbf24" }}>retrieve</text>
+
+      {/* Animated particles flowing through pipeline */}
+      <circle r="2.5" fill="#fbbf24" filter="drop-shadow(0 0 3px #f59e0b)">
+        <animateMotion dur="2.5s" repeatCount="indefinite" path="M 55 35 L 150 35 Q 210 35 215 145 L 250 147 L 250 183 L 250 195 L 250 231 L 250 243" />
+      </circle>
+      <circle r="2.5" fill="#fbbf24" filter="drop-shadow(0 0 3px #f59e0b)">
+        <animateMotion dur="2.5s" begin="0.8s" repeatCount="indefinite" path="M 55 35 L 150 35 Q 210 35 215 145 L 250 147 L 250 183 L 250 195 L 250 231 L 250 243" />
+      </circle>
+      <circle r="2.5" fill="#4ade80" filter="drop-shadow(0 0 3px #4ade80)">
+        <animateMotion dur="1.8s" begin="1.3s" repeatCount="indefinite" path="M 55 35 L 150 35 Q 210 35 215 85 L 250 87" />
+      </circle>
+
+      {/* Metrics bar at bottom */}
+      <text x="20" y="280" className="arch-tier">CLASSIFIER PERFORMANCE</text>
+
+      {/* Accuracy bar */}
+      <text x="20" y="298" style={{ fontSize: "9px", fill: "#8c8a82", fontFamily: "var(--font-mono)" }}>acc</text>
+      <rect x="48" y="290" width="150" height="8" rx="1" fill="#26262e" />
+      <rect x="48" y="290" width="0" height="8" rx="1" fill="#f59e0b">
+        <animate attributeName="width" values="0;123" dur="1.5s" fill="freeze" />
+      </rect>
+      <text x="205" y="298" style={{ fontSize: "9px", fill: "#fbbf24", fontFamily: "var(--font-mono)", fontWeight: 600 }}>82.4%</text>
+
+      {/* PR-AUC bar */}
+      <text x="20" y="314" style={{ fontSize: "9px", fill: "#8c8a82", fontFamily: "var(--font-mono)" }}>auc</text>
+      <rect x="48" y="306" width="150" height="8" rx="1" fill="#26262e" />
+      <rect x="48" y="306" width="0" height="8" rx="1" fill="#f59e0b">
+        <animate attributeName="width" values="0;135" dur="1.5s" begin="0.2s" fill="freeze" />
+      </rect>
+      <text x="205" y="314" style={{ fontSize: "9px", fill: "#fbbf24", fontFamily: "var(--font-mono)", fontWeight: 600 }}>0.90</text>
+    </svg>
+  );
+}
+
 const cases = [
   {
     id: "proj-microburst",
@@ -145,7 +228,7 @@ const cases = [
     id: "proj-lb",
     index: "/ 02",
     stack: ["Go", "Mininet", "OpenFlow", "Prequal"],
-    github: "https://github.com/aryansaraf018/CS599-Latency-aware-load-balancing",
+    github: "https://github.com/aryansaraf018/Latency-Aware-Load-Balancer",
     title: "Latency-Aware Load Balancer",
     lede: "A Go load balancer that routes by real-time active probing (Prequal) and crushes tail latency under straggler conditions.",
     sections: [
@@ -165,6 +248,30 @@ const cases = [
     ],
     diagram: <ArchSvgLB />,
     diagramTitle: "Fat-Tree Topology",
+  },
+  {
+    id: "proj-aqr",
+    index: "/ 03",
+    stack: ["Python", "DistilRoBERTa", "RAG", "Google Trends API"],
+    title: "Adaptive Query Reformulation (AQR-RAG)",
+    lede: "A query-rewriting layer that boosts RAG retrieval on ambiguous queries using real-time trend signals.",
+    sections: [
+      {
+        h: "Problem",
+        p: "RAG systems struggle on short, ambiguous queries: the retriever returns lexically-similar but semantically-off passages. Static rewriters miss time-sensitive phrasing that only matters right now.",
+      },
+      {
+        h: "Approach",
+        p: "Fine-tuned DistilRoBERTa as a binary classifier (weak vs. strong query). Weak queries route through a rewriting path that injects real-time Google Trends context, aligning the expansion with trending terminology before retrieval.",
+      },
+    ],
+    results: [
+      <><strong>82.4%</strong> classification accuracy on held-out queries with fine-tuned DistilRoBERTa</>,
+      <><strong>0.90 PR-AUC</strong>, robust precision/recall across the operating range</>,
+      <>Trend-aligned reformulations lifted retrieval precision on ambiguous queries</>,
+    ],
+    diagram: <AQRPipelineViz />,
+    diagramTitle: "Query Pipeline",
   },
 ];
 

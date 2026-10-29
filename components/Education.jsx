@@ -13,12 +13,12 @@ const schools = [
     logo: "USC",
   },
   {
-    name: "Shah and Anchor Kutchhi Engineering College",
+    name: "University of Mumbai",
     degree: "B.E. Information Technology",
     date: "Aug 2019 → May 2023",
     location: "Mumbai, India",
     courses: ["Data Structures & Algorithms", "Operating Systems", "Database Management Systems", "Computer Networks"],
-    logo: "SAKEC",
+    logo: "MU",
   },
 ];
 

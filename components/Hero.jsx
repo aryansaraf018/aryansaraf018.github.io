@@ -48,18 +48,6 @@ export default function Hero() {
             <em className="text-amber-bright not-italic font-medium">resilient</em> infrastructure.
           </motion.p>
 
-          <motion.p
-            {...fadeUp}
-            transition={{ duration: 0.5, delay: 0.55 }}
-            className="text-fg-2 text-base leading-[1.75] max-w-[540px] mb-9"
-          >
-            Currently at <strong className="text-fg-0">USC</strong> teaching Advanced Game Consoles and building
-            datacenter telemetry at microsecond resolution. Previously a DevOps engineer at{" "}
-            <strong className="text-fg-0">Jio Platforms</strong>, where I architected real-time CDC pipelines and
-            automated GCP infrastructure serving enterprise clients. I like systems that are fast, observable, and
-            impossible to misuse.
-          </motion.p>
-
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.65 }}

@@ -9,7 +9,7 @@ const baseItems = [
   { group: "Navigate", icon: "03", label: "Stack", sub: "g s", action: () => jump("#stack") },
   { group: "Navigate", icon: "04", label: "Education", sub: "g e", action: () => jump("#education") },
   { group: "Navigate", icon: "05", label: "Contact", sub: "g c", action: () => jump("#contact") },
-  { group: "Links", icon: "@", label: "Email: aryanrah@usc.edu", sub: "open", action: () => (window.location.href = "mailto:aryanrah@usc.edu") },
+  { group: "Links", icon: "@", label: "Email: aryansaraf05@gmail.com", sub: "open", action: () => (window.location.href = "mailto:aryansaraf05@gmail.com") },
   { group: "Links", icon: "in", label: "LinkedIn", sub: "open", action: () => window.open("https://www.linkedin.com/in/aryan-saraf12/", "_blank") },
   { group: "Links", icon: "gh", label: "GitHub", sub: "open", action: () => window.open("https://github.com/aryansaraf018", "_blank") },
   { group: "Links", icon: "PDF", label: "Download Resume", sub: "open", action: () => window.open("/Aryan_Saraf_Resume.pdf", "_blank") },
@@ -19,7 +19,7 @@ const baseItems = [
     label: "Copy email to clipboard",
     sub: "⏎",
     action: () => {
-      navigator.clipboard.writeText("aryanrah@usc.edu");
+      navigator.clipboard.writeText("aryansaraf05@gmail.com");
       showToast("Email copied");
     },
   },
