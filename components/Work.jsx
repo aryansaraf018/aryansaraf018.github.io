@@ -5,7 +5,7 @@ import SectionHead from "./SectionHead";
 
 const items = [
   {
-    date: "May 2025 → Aug 2025",
+    date: "Jun 2025 → Aug 2025",
     logo: "E-D",
     title: "Software Engineering Intern",
     org: "Easley-Dunn Productions, Inc. · Los Angeles, CA",
